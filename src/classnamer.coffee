@@ -1,14 +1,8 @@
 # Description
-#   A hubot script that does the things
-#
-# Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
+#   Class name generator.
 #
 # Commands:
-#   hubot class me - <what the respond trigger does>
-#
-# Notes:
-#   <optional notes required for the script>
+#   hubot class me - generates a class name
 #
 # Author:
 #   TAKAHASHI Kazunari[takahashi@1syo.net]

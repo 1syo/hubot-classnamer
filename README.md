@@ -1,6 +1,6 @@
 # hubot-classnamer
 
-A hubot script that does the things
+Class name generator.
 
 See [`src/classnamer.coffee`](src/classnamer.coffee) for full documentation.
 
@@ -19,6 +19,6 @@ Then add **hubot-classnamer** to your `external-scripts.json`:
 ## Sample Interaction
 
 ```
-user1>> hubot hello
-hubot>> hello!
+user1>> hubot class me
+hubot>> AutomaticFileBundle
 ```
