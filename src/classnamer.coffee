@@ -15,8 +15,8 @@
 #   TAKAHASHI Kazunari[@<org>]
 
 module.exports = (robot) ->
-  robot.respond /hello/, (msg) ->
-    msg.reply "hello!"
-
-  robot.hear /orly/, ->
-    msg.send "yarly"
+  robot.respond /class(?: me)?/i, (msg) ->
+    msg.http("http://www.classnamer.com/index.txt?generator=generic")
+      .get() (err, res, body) ->
+        unless err
+          msg.replay body
