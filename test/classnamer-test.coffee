@@ -17,7 +17,7 @@ describe 'classnamer', ->
     nock.disableNetConnect()
     nockScope = nock('http://www.classnamer.com/').get("/index.txt?generator=generic")
     envelope = { name: 'mocha', room: '#mocha'}
-    robot = new Robot null, 'mock-adapter', false, 'hubot'
+    robot = new Robot null, 'mock-adapter', yes, 'hubot'
 
     robot.adapter.on 'connected', ->
       require("../src/classnamer")(robot)
@@ -29,7 +29,7 @@ describe 'classnamer', ->
     nockScope.reply 200, 'AutomaticFileBundle\n'
 
     adapter.on 'send', (envelope, strings) ->
-      expect(strings[0]).match(/AutomaticFileBundle\n/);
+      expect(strings[0]).to.eq "AutomaticFileBundle"
       done()
 
     adapter.receive new TextMessage(envelope, "hubot class me")
@@ -47,7 +47,7 @@ describe 'classnamer', ->
     nockScope.reply 200, 'AutomaticFileBundle\n'
 
     adapter.on 'send', (envelope, strings) ->
-      expect(strings[0]).match(/AutomaticFileBundle\n/);
+      expect(strings[0]).to.eq "AutomaticFileBundle"
       done()
 
     adapter.receive new TextMessage(envelope, "hubot class")
@@ -55,4 +55,5 @@ describe 'classnamer', ->
   afterEach ->
     nockScope = null
     nock.cleanAll()
+    robot.server.close()
     robot.shutdown()

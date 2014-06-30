@@ -12,4 +12,4 @@ module.exports = (robot) ->
     msg.http("http://www.classnamer.com/index.txt?generator=generic")
       .get() (err, res, body) ->
         unless err
-          msg.send body
+          msg.send body.replace(/\n/g, "")
