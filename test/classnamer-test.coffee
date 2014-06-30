@@ -29,7 +29,7 @@ describe 'classnamer', ->
     nockScope.reply 200, 'AutomaticFileBundle\n'
 
     adapter.on 'send', (envelope, strings) ->
-      expect(strings[0]).match(/AutomaticFileBundle\n/);
+      expect(strings[0]).to.eq "AutomaticFileBundle"
       done()
 
     adapter.receive new TextMessage(envelope, "hubot class me")
@@ -47,7 +47,7 @@ describe 'classnamer', ->
     nockScope.reply 200, 'AutomaticFileBundle\n'
 
     adapter.on 'send', (envelope, strings) ->
-      expect(strings[0]).match(/AutomaticFileBundle\n/);
+      expect(strings[0]).to.eq "AutomaticFileBundle"
       done()
 
     adapter.receive new TextMessage(envelope, "hubot class")
