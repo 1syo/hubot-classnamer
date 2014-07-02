@@ -15,7 +15,8 @@ describe 'classnamer', ->
 
   beforeEach (done) ->
     nock.disableNetConnect()
-    nockScope = nock('http://www.classnamer.com/').get("/index.txt?generator=generic")
+    nockScope = nock('http://www.classnamer.com/')
+                  .get("/index.txt?generator=generic")
     envelope = { name: 'mocha', room: '#mocha'}
     robot = new Robot null, 'mock-adapter', yes, 'hubot'
 
@@ -38,7 +39,7 @@ describe 'classnamer', ->
     nockScope.reply 404, ""
 
     adapter.on 'send', (envelope, strings) ->
-      expect(strings[0]).to.eq("");
+      expect(strings[0]).to.eq("")
       done()
 
     adapter.receive new TextMessage(envelope, "hubot class me")
