@@ -1,3 +1,4 @@
+[![Build Status](http://img.shields.io/travis/1syo/hubot-classnamer.svg?style=flat)](https://travis-ci.org/1syo/hubot-classnamer)
 # hubot-classnamer
 
 Class name generator.
