@@ -1,3 +1,9 @@
+require("blanket") {
+  "data-cover-never": ["node_modules", "hubot/src"]
+  pattern: "classnamer.coffee"
+  loader: "./node-loaders/coffee-script"
+}
+
 Robot = require("hubot/src/robot")
 TextMessage = require("hubot/src/message").TextMessage
 
