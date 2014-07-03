@@ -1,5 +1,5 @@
 require("blanket") {
-  "data-cover-never": ["node_modules", "hubot/src"]
+  "data-cover-never": "node_modules"
   pattern: "classnamer.coffee"
   loader: "./node-loaders/coffee-script"
 }
