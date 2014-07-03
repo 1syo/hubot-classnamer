@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = function(grunt) {
-
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-release');
   grunt.loadNpmTasks('grunt-coffeelint');
+  grunt.loadNpmTasks('grunt-coveralls');
 
   grunt.initConfig({
     mochaTest: {
@@ -38,6 +38,12 @@ module.exports = function(grunt) {
       app: ['coffeelint.json', 'package.json', 'src/*.coffee', 'test/*.coffee'],
       options: {
         configFile: 'coffeelint.json'
+      }
+    },
+    coveralls: {
+      options: {
+        src: "coverage/lcov.info",
+        force: false
       }
     }
   });

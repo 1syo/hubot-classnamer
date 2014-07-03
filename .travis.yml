@@ -8,6 +8,6 @@ before_script: mkdir coverage
 script:
   - grunt test
   - grunt coffeelint
-after_script: cat ./coverage/lcov.info| ./node_modules/coveralls/bin/coveralls.js
+after_script: grunt coveralls
 notifications:
   email: false

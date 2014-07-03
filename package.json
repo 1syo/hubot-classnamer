@@ -35,7 +35,8 @@
     "grunt-coffeelint": "*",
     "mocha-lcov-reporter": "*",
     "blanket": "*",
-    "coveralls": "*"
+    "coveralls": "*",
+    "grunt-coveralls": "*"
   },
 
   "main": "index.coffee",
