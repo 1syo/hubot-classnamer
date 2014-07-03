@@ -4,8 +4,10 @@ node_js:
   - "0.10"
 before_install: npm install -g grunt-cli
 install: npm install
+before_script: mkdir coverage
 script:
   - grunt test
   - grunt coffeelint
+after_script: cat ./coverage/lcov.info| ./node_modules/coveralls/bin/coveralls.js
 notifications:
   email: false

@@ -11,9 +11,17 @@ module.exports = function(grunt) {
       test: {
         options: {
           reporter: 'spec',
-          require: 'coffee-script'
+          require: ['coffee-script']
         },
         src: ['test/**/*.coffee']
+      },
+      coverage: {
+        options: {
+          reporter: "mocha-lcov-reporter",
+          quiet: true,
+          captureFile: "coverage/lcov.info"
+        },
+        src: ["test/**/*.coffee"]
       }
     },
     release: {
