@@ -41,9 +41,8 @@ module.exports = function(grunt) {
       }
     },
     coveralls: {
-      options: {
-        src: "coverage/lcov.info",
-        force: false
+      all: {
+        src: "coverage/lcov.info"
       }
     }
   });
